@@ -1,6 +1,6 @@
 #include <stdio.h>
 
 int main(){
-    printf("Anastasia\nKrakhmalnikova\n");
+    printf("Krakhmalnikova\nAnastasia\nIlyinichna\n");
     return 0;
 }

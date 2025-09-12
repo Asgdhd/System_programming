@@ -1,17 +1,42 @@
 Dump of assembler code for function _start:
-   0x0804901b <+0>:	mov    $0x4,%eax
-   0x08049020 <+5>:	mov    $0x1,%ebx
-   0x08049025 <+10>:	mov    $0x8049000,%ecx
-   0x0804902a <+15>:	mov    $0xb,%edx
-   0x0804902f <+20>:	int    $0x80
-   0x08049031 <+22>:	mov    $0x4,%eax
-   0x08049036 <+27>:	mov    $0x1,%ebx
-   0x0804903b <+32>:	mov    $0x804900b,%ecx
-   0x08049040 <+37>:	mov    $0x10,%edx
-   0x08049045 <+42>:	int    $0x80
-   0x08049047 <+44>:	mov    $0x1,%eax
-   0x0804904c <+49>:	mov    $0x0,%ebx
-   0x08049051 <+54>:	int    $0x80
+   0x0000000000401027 <+0>:	mov    $0x4,%rax
+   0x000000000040102e <+7>:	mov    $0x1,%rbx
+   0x0000000000401035 <+14>:	movabs $0x401000,%rcx
+   0x000000000040103f <+24>:	mov    $0x10,%rdx
+   0x0000000000401046 <+31>:	int    $0x80
+   0x0000000000401048 <+33>:	mov    $0x4,%rax
+   0x000000000040104f <+40>:	mov    $0x1,%rbx
+   0x0000000000401056 <+47>:	movabs $0x401010,%rcx
+   0x0000000000401060 <+57>:	mov    $0xb,%rdx
+   0x0000000000401067 <+64>:	int    $0x80
+   0x0000000000401069 <+66>:	mov    $0x4,%rax
+   0x0000000000401070 <+73>:	mov    $0x1,%rbx
+   0x0000000000401077 <+80>:	movabs $0x40101b,%rcx
+   0x0000000000401081 <+90>:	mov    $0xc,%rdx
+   0x0000000000401088 <+97>:	int    $0x80
+   0x000000000040108a <+99>:	mov    $0x1,%rax
+   0x0000000000401091 <+106>:	mov    $0x0,%rbx
+   0x0000000000401098 <+113>:	int    $0x80
+End of assembler dump.
+Dump of assembler code for function _start:
+   0x08049027 <+0>:	mov    $0x4,%eax
+   0x0804902c <+5>:	mov    $0x1,%ebx
+   0x08049031 <+10>:	mov    $0x8049000,%ecx
+   0x08049036 <+15>:	mov    $0x10,%edx
+   0x0804903b <+20>:	int    $0x80
+   0x0804903d <+22>:	mov    $0x4,%eax
+   0x08049042 <+27>:	mov    $0x1,%ebx
+   0x08049047 <+32>:	mov    $0x8049010,%ecx
+   0x0804904c <+37>:	mov    $0xb,%edx
+   0x08049051 <+42>:	int    $0x80
+   0x08049053 <+44>:	mov    $0x4,%eax
+   0x08049058 <+49>:	mov    $0x1,%ebx
+   0x0804905d <+54>:	mov    $0x804901b,%ecx
+   0x08049062 <+59>:	mov    $0xb,%edx
+   0x08049067 <+64>:	int    $0x80
+   0x08049069 <+66>:	mov    $0x1,%eax
+   0x0804906e <+71>:	mov    $0x0,%ebx
+   0x08049073 <+76>:	int    $0x80
 End of assembler dump.
 
 This GDB supports auto-downloading debuginfo from the following URLs:
@@ -19,14 +44,18 @@ This GDB supports auto-downloading debuginfo from the following URLs:
 Enable debuginfod for this session? (y or [n]) [answered N; input not from terminal]
 Debuginfod has been disabled.
 To make this setting permanent, add 'set debuginfod enabled off' to .gdbinit.
-Dump of assembler code for function main:
-   0x0000000000001149 <+0>:	endbr64
-   0x000000000000114d <+4>:	push   %rbp
-   0x000000000000114e <+5>:	mov    %rsp,%rbp
-   0x0000000000001151 <+8>:	lea    0xeac(%rip),%rax        # 0x2004
-   0x0000000000001158 <+15>:	mov    %rax,%rdi
-   0x000000000000115b <+18>:	call   0x1050 <puts@plt>
-   0x0000000000001160 <+23>:	mov    $0x0,%eax
-   0x0000000000001165 <+28>:	pop    %rbp
-   0x0000000000001166 <+29>:	ret
+Dump of assembler code for function _start:
+   0x0000000000001060 <+0>:	endbr64
+   0x0000000000001064 <+4>:	xor    %ebp,%ebp
+   0x0000000000001066 <+6>:	mov    %rdx,%r9
+   0x0000000000001069 <+9>:	pop    %rsi
+   0x000000000000106a <+10>:	mov    %rsp,%rdx
+   0x000000000000106d <+13>:	and    $0xfffffffffffffff0,%rsp
+   0x0000000000001071 <+17>:	push   %rax
+   0x0000000000001072 <+18>:	push   %rsp
+   0x0000000000001073 <+19>:	xor    %r8d,%r8d
+   0x0000000000001076 <+22>:	xor    %ecx,%ecx
+   0x0000000000001078 <+24>:	lea    0xca(%rip),%rdi        # 0x1149 <main>
+   0x000000000000107f <+31>:	call   *0x2f53(%rip)        # 0x3fd8
+   0x0000000000001085 <+37>:	hlt
 End of assembler dump.

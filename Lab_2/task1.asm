@@ -1,45 +1,43 @@
 format ELF64
 
 public _start
+public exit
 
 section '.data' writable
-    place db ?
     S db 'qICelfwrMKpLbficRZvsmdvghv', 0
+    char db ?
 
 section '.text' executable
 _start:
     mov rsi, S
-    
+    xor rax, rax
+    push rax
+    mov rax, 0xA
+    push rax
+  
 push_chars:
     mov al, [rsi]
-    cmp al, 0
-    je pop_chars
-    push ax
     inc rsi
+    test al, al
+    je pop_chars
+    push rax
     jmp push_chars
 
 pop_chars:
-    pop ax
-    cmp ax, 0
-    je new_line
-    call print_char
-    jmp pop_chars
-
-new_line:
-    mov al, 0xA
-    call print_char
-    jmp exit
-
-print_char:
-    mov [place], al
+    pop rax
+    test al, al
+    je exit
+    
+    mov [char], al
     mov eax, 4
     mov ebx, 1
-    mov ecx, place
+    mov ecx, char
     mov edx, 1
     int 0x80
-    ret
+    jmp pop_chars
 
+section '.exit' executable    
 exit:
     mov eax, 1
-    xor ebx, ebx
+    mov ebx, 0
     int 0x80

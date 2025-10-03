@@ -77,32 +77,45 @@ len_str:
 ;input rax - number
 ;rsi -address of begin of string
 number_str:
-  push rbx
-  push rcx
-  push rdx
-  xor rcx, rcx
-  mov rbx, 10
-  .loop_1:
-    xor rdx, rdx
-    div rbx
-    add rdx, 48
+    push rbx
+    push rcx
     push rdx
-    inc rcx
-    cmp rax, 0
-    jne .loop_1
-  xor rdx, rdx
-  .loop_2:
-    pop rax
-    mov byte [rsi+rdx], al
-    inc rdx
-    dec rcx
-    cmp rcx, 0
-  jne .loop_2
-  mov byte [rsi+rdx], 0   
-  pop rdx
-  pop rcx
-  pop rbx
-  ret
+    push rdi
+  
+    mov rdi, rsi 
+    xor rcx, rcx
+    mov rbx, 10
+
+    test rax, rax
+    jns .positive
+    neg rax 
+    mov byte [rdi], '-'
+    inc rdi
+
+    .positive:
+    .loop_1:
+        xor rdx, rdx
+        div rbx
+        add rdx, 48
+        push rdx
+        inc rcx
+        cmp rax, 0
+        jne .loop_1
+
+
+    .loop_2:
+        pop rax
+        mov byte [rdi], al
+        inc rdi
+        loop .loop_2
+
+    mov byte [rdi], 0
+    
+    pop rdi
+    pop rdx
+    pop rcx
+    pop rbx
+    ret
 
 
 ;The function realizates user input from the keyboard

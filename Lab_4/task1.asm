@@ -6,7 +6,6 @@ include 'lib.asm'
 
 section '.bss' writable
   buffer rb 255
-  answer rb 2
 
 section '.data' writable
     input_msg db "input positive number n:", 0xA, 0

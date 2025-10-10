@@ -139,6 +139,7 @@ _start:
 .input_error:
     mov rsi, input_error
     call print_str
+    call new_line
     call error_exit
 
 .file_opening_error:

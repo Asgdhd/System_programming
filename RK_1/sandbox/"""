@@ -1,0 +1,7 @@
+Linux codespaces-3685e1 6.8.0-1030-azure #35~22.04.1-Ubuntu SMP Mon May 26 18:08:30 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+root          34  0.0  0.0  12016  2836 ?        Ss   08:04   0:00 sshd: /usr/sbin/sshd [listener] 0 of 10-100 startups
+root          57  0.1  0.9 1968036 74160 ?       Sl   08:04   0:00 dockerd --dns 168.63.129.16
+root          72  0.0  0.5 1727708 47356 ?       Ssl  08:04   0:00 containerd --config /var/run/docker/containerd/containerd.toml
+root         537  0.0  0.0   2800  1792 ?        Ss   08:05   0:00 /bin/sh
+root        1989  0.0  0.0   2800  1664 ?        Ss   08:07   0:00 /bin/sh
+codespa+    3078  0.0  0.0   7080  2176 pts/0    S+   08:08   0:00 grep --color=auto root
